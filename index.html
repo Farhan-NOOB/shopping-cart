@@ -25,7 +25,7 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <button id="buttonCapture-3" class="btn btn-default"><i class="fas fa-minus"></i></button>
                            <input id="formCapture-1" type="text" class="form-control text-center" value="1">
                            <button id="buttonCapture-1" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
@@ -44,8 +44,8 @@
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
                            <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <input id="formCapture-2" type="text" class="form-control text-center" value="1">
+                           <button id="buttonCapture-2" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
                         <h5>$59</h5>
@@ -86,6 +86,23 @@
         
          
       })
+      const buttonCaptureTwo = document.getElementById("buttonCapture-2");
+      buttonCaptureTwo.addEventListener("click", function(){
+         var valueOne = document.getElementById("formCapture-2").value;
+         valueOne++ ;
+         document.getElementById("formCapture-2").value = valueOne;
+      })
+      const buttonCaptureThree = document.getElementById("buttonCapture-3");
+      buttonCaptureThree.addEventListener("click", function(){
+         
+            var valueOne = document.getElementById("formCapture-1").value;
+            valueOne-- ;
+            document.getElementById("formCapture-1").value = valueOne;
+            if (valueOne < 1){
+               console.log("please enter a value greater or equal to 1");
+            }
+      })
+
 
 
    </script>
