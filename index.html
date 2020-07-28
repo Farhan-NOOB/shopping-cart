@@ -97,9 +97,10 @@
          
             var valueOne = document.getElementById("formCapture-1").value;
             valueOne-- ;
+            if (valueOne >= 1){
+               
             document.getElementById("formCapture-1").value = valueOne;
-            if (valueOne < 1){
-               console.log("please enter a value greater or equal to 1");
+            
             }
       })
 
