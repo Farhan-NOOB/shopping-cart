@@ -29,7 +29,7 @@
                            <input id="formCapture-1" type="text" class="form-control text-center" value="1">
                            <button id="buttonCapture-1" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$1219</h5>
+                        <h5 id="caseTotal">$1219</h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -43,12 +43,12 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <button id="buttonCapture-4" class="btn btn-default"><i class="fas fa-minus"></i></button>
                            <input id="formCapture-2" type="text" class="form-control text-center" value="1">
                            <button id="buttonCapture-2" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$59</h5>
+                        <h5 id="caseTotal2">$59</h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -81,25 +81,49 @@
       const buttonCaptureOne = document.getElementById("buttonCapture-1");
       buttonCaptureOne.addEventListener("click", function(){
          var valueOne = document.getElementById("formCapture-1").value;
-         valueOne++ ;
-         document.getElementById("formCapture-1").value = valueOne;
+         var valueOneInt = parseInt(valueOne);
+         valueOneInt++ ;
+        
+
+         document.getElementById("formCapture-1").value = valueOneInt;
+          
+         caseTotal = 1219 * valueOneInt++ ;
+         document.getElementById('caseTotal').innerText = "$" + caseTotal ; 
         
          
       })
       const buttonCaptureTwo = document.getElementById("buttonCapture-2");
       buttonCaptureTwo.addEventListener("click", function(){
          var valueOne = document.getElementById("formCapture-2").value;
-         valueOne++ ;
-         document.getElementById("formCapture-2").value = valueOne;
+         var valueOneInt = parseInt(valueOne);
+         valueOneInt++ ;
+         document.getElementById("formCapture-2").value = valueOneInt;
+         caseTotal2 = 59 * valueOneInt++ ;
+         document.getElementById('caseTotal2').innerText = "$" + caseTotal2 ; 
       })
       const buttonCaptureThree = document.getElementById("buttonCapture-3");
       buttonCaptureThree.addEventListener("click", function(){
          
-            var valueOne = document.getElementById("formCapture-1").value;
-            valueOne-- ;
-            if (valueOne >= 1){
+            var valueOneInt = document.getElementById("formCapture-1").value;
+            valueOneInt-- ;
+            if (valueOneInt >= 1){
                
-            document.getElementById("formCapture-1").value = valueOne;
+            document.getElementById("formCapture-1").value = valueOneInt;
+            caseTotal = 1219 * valueOneInt-- ;
+         document.getElementById('caseTotal').innerText = "$" + caseTotal ; 
+            
+            }
+      })
+      const buttonCaptureFour = document.getElementById("buttonCapture-4");
+      buttonCaptureFour.addEventListener("click", function(){
+         
+            var valueOneInt = document.getElementById("formCapture-2").value;
+            valueOneInt-- ;
+            if (valueOneInt >= 1){
+               
+            document.getElementById("formCapture-2").value = valueOneInt;
+            caseTotal2 = 59 * valueOneInt-- ;
+         document.getElementById('caseTotal2').innerText = "$" + caseTotal2 ; 
             
             }
       })
