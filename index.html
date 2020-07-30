@@ -64,7 +64,7 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$1,278</h5>
+                        <h5>$ <span id="subtotalValue"> 1278</span></h5>
                         <h5>$0</h5>
                         <h5>$1,278</h5>
                      </div>
@@ -89,6 +89,13 @@
           
          caseTotal = 1219 * valueOneInt++ ;
          document.getElementById('caseTotal').innerText = "$" + caseTotal ; 
+
+         const subtotalValue = document.getElementById('subtotalValue').innerText;
+         const subtotalValueInt = parseFloat(subtotalValue);
+         const subtotalValueFinal1 = subtotalValueInt + 1219;
+         document.getElementById('subtotalValue').innerText =  subtotalValueFinal1;
+
+         
         
          
       })
@@ -100,6 +107,12 @@
          document.getElementById("formCapture-2").value = valueOneInt;
          caseTotal2 = 59 * valueOneInt++ ;
          document.getElementById('caseTotal2').innerText = "$" + caseTotal2 ; 
+
+         const subtotalValue = document.getElementById('subtotalValue').innerText;
+         const subtotalValueInt = parseFloat(subtotalValue);
+         const subtotalValueFinal1 = subtotalValueInt + 59;
+         document.getElementById('subtotalValue').innerText =  subtotalValueFinal1;
+        
       })
       const buttonCaptureThree = document.getElementById("buttonCapture-3");
       buttonCaptureThree.addEventListener("click", function(){
@@ -111,8 +124,14 @@
             document.getElementById("formCapture-1").value = valueOneInt;
             caseTotal = 1219 * valueOneInt-- ;
          document.getElementById('caseTotal').innerText = "$" + caseTotal ; 
+
+         const subtotalValue = document.getElementById('subtotalValue').innerText;
+         const subtotalValueInt = parseFloat(subtotalValue);
+         const subtotalValueFinal1 = subtotalValueInt - 1219;
+         document.getElementById('subtotalValue').innerText =  subtotalValueFinal1;
             
             }
+          
       })
       const buttonCaptureFour = document.getElementById("buttonCapture-4");
       buttonCaptureFour.addEventListener("click", function(){
@@ -124,11 +143,17 @@
             document.getElementById("formCapture-2").value = valueOneInt;
             caseTotal2 = 59 * valueOneInt-- ;
          document.getElementById('caseTotal2').innerText = "$" + caseTotal2 ; 
+
+         const subtotalValue = document.getElementById('subtotalValue').innerText;
+         const subtotalValueInt = parseFloat(subtotalValue);
+         const subtotalValueFinal1 = subtotalValueInt - 59;
+         document.getElementById('subtotalValue').innerText =  subtotalValueFinal1;
+         
             
             }
+            
       })
-
-
+      
 
    </script>
 </body>
